@@ -433,12 +433,18 @@ function Portfolio() {
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
               <div
-                className={`relative flex h-48 items-center justify-center bg-gradient-to-br ${p.gradient}`}
+                className={`relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br ${p.gradient}`}
               >
-                <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, white 1px, transparent 1px), radial-gradient(circle at 70% 60%, white 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-                <div className="grid h-20 w-20 place-items-center rounded-2xl bg-white/10 text-white backdrop-blur-md">
-                  <div className="scale-150">{p.icon}</div>
-                </div>
+                {p.image ? (
+                  <img src={p.image} alt={p.t} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                ) : (
+                  <>
+                    <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, white 1px, transparent 1px), radial-gradient(circle at 70% 60%, white 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+                    <div className="grid h-20 w-20 place-items-center rounded-2xl bg-white/10 text-white backdrop-blur-md">
+                      <div className="scale-150">{p.icon}</div>
+                    </div>
+                  </>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold">{p.t}</h3>
