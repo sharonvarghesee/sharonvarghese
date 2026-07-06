@@ -115,7 +115,7 @@ function Portfolio() {
       <header className="fixed top-2 left-0 right-0 z-40 px-4">
         <nav className="glass-card mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
           <a href="#home" className="font-display text-lg font-bold">
-            Sharon<span className="text-gradient">.dev</span>
+            Sharon<span className="text-gradient"></span>
           </a>
           <ul className="hidden items-center gap-1 md:flex">
             {nav.map((n) => (
@@ -276,7 +276,7 @@ function Portfolio() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               {[
                 { t: "Education", d: "MCA in progress" },
-                { t: "Internship", d: "AWS Cloud, Trinity" },
+                { t: "Internship", d: "AWS Cloud, Trinity Software Technologies" },
                 { t: "Projects", d: "Cloud & Web" },
                 { t: "Focus", d: "AWS · Full-Stack" },
               ].map((c) => (
@@ -327,7 +327,7 @@ function Portfolio() {
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <h3 className="text-xl font-bold">AWS Cloud Intern</h3>
-              <p className="text-primary">Trinity</p>
+              <p className="text-primary">Trinity Software Technologies</p>
             </div>
             <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground">
               May 2026 · 1 Month
