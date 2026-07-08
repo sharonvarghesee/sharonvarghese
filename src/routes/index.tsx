@@ -488,29 +488,7 @@ function Portfolio() {
               <SocialLink href="mailto:sharonvarghese0028@gmail.com" label="Email"><MailIcon /></SocialLink>
             </div>
           </div>
-          <form
-            onSubmit={(e) => { e.preventDefault(); alert("Thanks! I'll get back to you soon."); }}
-            className="glass-card grid gap-4 p-6 sm:p-8"
-            data-reveal
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field label="Name" name="name" placeholder="Your name" />
-              <Field label="Email" name="email" type="email" placeholder="you@example.com" />
-            </div>
-            <Field label="Subject" name="subject" placeholder="Project inquiry" />
-            <div>
-              <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Message</label>
-              <textarea
-                required
-                rows={5}
-                placeholder="Tell me about your project…"
-                className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
-              />
-            </div>
-            <button type="submit" className="btn-primary mt-2 rounded-full px-6 py-3 text-sm font-semibold">
-              Send Message
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </Section>
 
