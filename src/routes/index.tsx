@@ -591,6 +591,95 @@ function Field({ label, name, type = "text", placeholder }: { label: string; nam
   );
 }
 
+function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again.");
+    }
+  }
+
+  if (status === "success") {
+    return (
+      <div className="glass-card grid place-items-center gap-3 p-8 text-center" data-reveal>
+        <div className="grid h-14 w-14 place-items-center rounded-full text-primary-foreground" style={{ background: "var(--gradient-primary)" }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h3 className="text-lg font-semibold">Message sent!</h3>
+        <p className="text-sm text-muted-foreground">Thanks for reaching out. I'll get back to you soon.</p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="btn-ghost mt-2 rounded-full px-5 py-2 text-xs font-semibold"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      action="https://api.web3forms.com/submit"
+      method="POST"
+      onSubmit={handleSubmit}
+      className="glass-card grid gap-4 p-6 sm:p-8"
+      data-reveal
+    >
+      <input type="hidden" name="access_key" value="e5ac9a6d-415e-43df-872f-a8963b8c9b46" />
+      <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+      <div className="grid gap-4 sm:grid-cols-2">
+        <Field label="Name" name="name" placeholder="Your name" />
+        <Field label="Email" name="email" type="email" placeholder="you@example.com" />
+      </div>
+      <Field label="Subject" name="subject" placeholder="Project inquiry" />
+      <div>
+        <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Message</label>
+        <textarea
+          required
+          name="message"
+          rows={5}
+          placeholder="Tell me about your project…"
+          className="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30"
+        />
+      </div>
+      {status === "error" && (
+        <p className="text-sm text-red-400">{errorMsg}</p>
+      )}
+      <button
+        type="submit"
+        disabled={status === "sending"}
+        className="btn-primary mt-2 rounded-full px-6 py-3 text-sm font-semibold disabled:opacity-60"
+      >
+        {status === "sending" ? "Sending…" : "Send Message"}
+      </button>
+    </form>
+  );
+}
+
 function ContactRow({ icon, label, value, href, copy }: { icon: React.ReactNode; label: string; value: string; href?: string; copy?: boolean }) {
   const [copied, setCopied] = useState(false);
   const inner = (
