@@ -421,7 +421,7 @@ function Portfolio() {
               tags: ["EC2", "S3", "IAM", "VPC", "ALB", "Auto Scaling", "ACM", "HTML", "CSS", "JS"],
               gradient: "from-blue-500/30 to-cyan-500/20",
               icon: <CloudIcon />,
-              image: awsCloudImg.url,
+              image: awsCloudImg,
             },
             {
               t: "Sign Language Learning System",
@@ -429,7 +429,7 @@ function Portfolio() {
               tags: ["Python", "Django", "Computer Vision"],
               gradient: "from-cyan-500/30 to-primary/20",
               icon: <SparkIcon />,
-              image: signLanguageImg.url,
+              image: signLanguageImg,
             },
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
