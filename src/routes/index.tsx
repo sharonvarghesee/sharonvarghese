@@ -518,7 +518,7 @@ function Portfolio() {
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
           <div>
             <div className="font-display text-lg font-bold">
-              Sharon<span className="text-gradient">.dev</span>
+              Sharon<span className="text-gradient"></span>
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
               Designed & Developed by Sharon Varghese
