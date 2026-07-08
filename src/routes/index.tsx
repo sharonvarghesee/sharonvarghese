@@ -259,7 +259,7 @@ function Portfolio() {
               }}
             >
               <div className="flex h-full items-center justify-center p-8">
-                <img src={sharonImg} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
+                <img src="/sharon.jpg" alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
               </div>
             </div>
           </div>
