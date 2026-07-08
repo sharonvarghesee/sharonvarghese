@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import sharonAsset from "@/assets/sharon-profile.png.json";
+import sharonAsset from "@/assets/sharon-profile.png.asset.json";
 import awsCloudAsset from "@/assets/aws-cloud.jpg.json";
-import signLanguageAsset from "@/assets/sign-language.png.json";
+import signLanguageAsset from "@/assets/sign-language.png.asset.json";
 const sharonImg = sharonAsset.url;
 
 export const Route = createFileRoute("/")({
