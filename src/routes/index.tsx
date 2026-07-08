@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import sharonAsset from "@/assets/sharon-profile.png.asset.json";
 import awsCloudAsset from "@/assets/aws-cloud.jpg.asset.json";
+import signLanguageAsset from "@/assets/sign-language.png.asset.json";
 const sharonImg = sharonAsset.url;
 
 export const Route = createFileRoute("/")({
@@ -428,7 +429,7 @@ function Portfolio() {
               tags: ["Python", "Django", "Computer Vision"],
               gradient: "from-cyan-500/30 to-primary/20",
               icon: <SparkIcon />,
-              image: null as string | null,
+              image: signLanguageAsset.url,
             },
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
