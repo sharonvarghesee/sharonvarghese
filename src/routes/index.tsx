@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import sharonImg from "@/assets/sharon-profile.png.json";
-import awsCloudImg from "@/assets/aws-cloud.jpg.json";
-import signLanguageImg from "@/assets/sign-language.png.json";
-const sharonImg = sharonAsset.url;
+import sharonImg from "@/assets/sharon.jpg";
+import awsCloudImg from "@/assets/aws-cloud.jpg";
+import signLanguageImg from "@/assets/sign-language.png";
+//const sharonImg = sharonAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -421,7 +421,7 @@ function Portfolio() {
               tags: ["EC2", "S3", "IAM", "VPC", "ALB", "Auto Scaling", "ACM", "HTML", "CSS", "JS"],
               gradient: "from-blue-500/30 to-cyan-500/20",
               icon: <CloudIcon />,
-              image: awsCloudAsset.url,
+              image: awsCloudImg.url,
             },
             {
               t: "Sign Language Learning System",
@@ -429,7 +429,7 @@ function Portfolio() {
               tags: ["Python", "Django", "Computer Vision"],
               gradient: "from-cyan-500/30 to-primary/20",
               icon: <SparkIcon />,
-              image: signLanguageAsset.url,
+              image: signLanguageImg.url,
             },
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
