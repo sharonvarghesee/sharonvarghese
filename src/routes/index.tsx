@@ -181,6 +181,10 @@ function Portfolio() {
       <section id="home" className="relative overflow-hidden px-4 pt-32 pb-20 sm:pt-36">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-[1.2fr_1fr]">
           <div>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-emerald-500" />
+              Available for internships & entry-level roles
+            </div>
             <p className="text-sm font-medium tracking-widest text-primary uppercase">
               Hi, I'm
             </p>
