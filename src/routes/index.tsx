@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import sharonAsset from "@/assets/sharon-profile.png.asset.json";
-import awsCloudAsset from "@/assets/aws-cloud.jpg.asset.json";
-import signLanguageAsset from "@/assets/sign-language.png.asset.json";
-const sharonImg = sharonAsset.url;
+
+const profileImg = "https://i.ibb.co/qLxfjpBg/imgn.png";
+const awsImg = "https://i.ibb.co/RT7Nv6hz/How-to-leverage-AWS-cloud-services-for-your-business-needs.jpg";
+const signLanguageImg = "https://i.ibb.co/r22j7Pyy/product-About.png";
+
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
