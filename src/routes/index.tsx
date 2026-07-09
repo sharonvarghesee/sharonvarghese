@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import sharonAsset from "@/assets/sharon-profile.png.asset.json";
-import awsCloudAsset from "@/assets/aws-cloud.jpg.asset.json";
-import signLanguageAsset from "@/assets/sign-language.png.asset.json";
-const sharonImg = sharonAsset.url;
+
+const profileImg = "https://i.ibb.co/qLxfjpBg/imgn.png";
+const awsImg = "https://i.ibb.co/RT7Nv6hz/How-to-leverage-AWS-cloud-services-for-your-business-needs.jpg";
+const signLanguageImg = "https://i.ibb.co/r22j7Pyy/product-About.png";
+
 
 export const Route = createFileRoute("/")({
   component: Portfolio,
@@ -221,7 +222,7 @@ function Portfolio() {
             />
             <div className="relative h-72 w-72 overflow-hidden rounded-full ring-2 ring-primary/40 animate-glow sm:h-80 sm:w-80">
               <img
-                src={sharonImg}
+                src={profileImg}
                 alt="Sharon Varghese"
                 width={512}
                 height={512}
@@ -259,7 +260,7 @@ function Portfolio() {
               }}
             >
               <div className="flex h-full items-center justify-center p-8">
-                <img src={sharonImg} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
+                <img src={profileImg} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -421,7 +422,7 @@ function Portfolio() {
               tags: ["EC2", "S3", "IAM", "VPC", "ALB", "Auto Scaling", "ACM", "HTML", "CSS", "JS"],
               gradient: "from-blue-500/30 to-cyan-500/20",
               icon: <CloudIcon />,
-              image: awsCloudAsset.url,
+              image: awsImg,
             },
             {
               t: "Sign Language Learning System",
@@ -429,7 +430,7 @@ function Portfolio() {
               tags: ["Python", "Django", "Computer Vision"],
               gradient: "from-cyan-500/30 to-primary/20",
               icon: <SparkIcon />,
-              image: signLanguageAsset.url,
+              image: signLanguageImg,
             },
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
