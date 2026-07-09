@@ -222,7 +222,7 @@ function Portfolio() {
             />
             <div className="relative h-72 w-72 overflow-hidden rounded-full ring-2 ring-primary/40 animate-glow sm:h-80 sm:w-80">
               <img
-                src={sharonImg}
+                src={profileImg}
                 alt="Sharon Varghese"
                 width={512}
                 height={512}
@@ -260,7 +260,7 @@ function Portfolio() {
               }}
             >
               <div className="flex h-full items-center justify-center p-8">
-                <img src={sharonImg} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
+                <img src={profileImg} alt="" className="h-full w-full rounded-lg object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -422,7 +422,7 @@ function Portfolio() {
               tags: ["EC2", "S3", "IAM", "VPC", "ALB", "Auto Scaling", "ACM", "HTML", "CSS", "JS"],
               gradient: "from-blue-500/30 to-cyan-500/20",
               icon: <CloudIcon />,
-              image: awsCloudAsset.url,
+              image: awsImg,
             },
             {
               t: "Sign Language Learning System",
@@ -430,7 +430,7 @@ function Portfolio() {
               tags: ["Python", "Django", "Computer Vision"],
               gradient: "from-cyan-500/30 to-primary/20",
               icon: <SparkIcon />,
-              image: signLanguageAsset.url,
+              image: signLanguageImg,
             },
           ].map((p) => (
             <article key={p.t} className="glass-card glass-card-hover overflow-hidden" data-reveal>
